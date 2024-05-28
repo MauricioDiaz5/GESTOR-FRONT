@@ -1,0 +1,36 @@
+<div class="col-12 p-2">
+    <!--<label for="start">Fecha de busqueda:</label>
+    <p-calendar [showIcon]="true" [locale]="generalService.locale" dateFormat="dd/mm/yy" placeholer="dd/mm/aaaa" pattern="MM-dd-yyyy" [readonlyInput]="false"></p-calendar>-->
+    <h3 style="text-align: center">Citas</h3>
+    <p-table 
+    [value]="generalService.listaCitas" 
+    classStyle="col-12 divHHijo"
+    [lazy]="true" 
+    [tableStyle]="{'min-width': '50rem'}" 
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [paginator]="true"
+    scrollHeight="400px">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Cita</th>
+                <th>Paciente</th>
+                <th>Doctor</th>
+                <th>Area</th>
+                <th>Motivo</th>
+                <th>fechaCita</th>
+                <th>Atendida</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-cita>
+            <tr>
+                <td class="txt-alig">{{ cita.idCita }}</td>
+                <td class="txt-alig">{{ cita.nombrePac }}</td>
+                <td class="txt-alig">{{ cita.nombreDoc }}</td>
+                <td class="txt-alig">{{ generalService.getDescArea(cita.idArea) }}</td>
+                <td class="txt-alig">{{ cita.motivos }}</td>
+                <td class="txt-alig">{{ cita.fechaCita }}</td>
+                <td class="txt-alig">{{ cita.atendida == 1 ? 'SI': 'NO'}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

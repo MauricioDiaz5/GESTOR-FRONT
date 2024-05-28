@@ -1,0 +1,31 @@
+<app-header-main></app-header-main>
+<app-header></app-header>
+<div>
+  <div>
+    <div class="divHHijo col-2"></div>
+    <div class="divHHijo col-8">
+      <div class="divHHijo col-4">
+        <img class="p-7 icons50" src="./assets/LOGO1.png" />
+      </div>
+      <div class="divHHijo col-4">
+        <img class="p-7 icons50" src="./assets/tec_misantla_tit.png" />
+      </div>
+      <div class="divHHijo col-4">
+        <img class="p-7 icons50" src="./assets/tec_misantla.png" />
+      </div>
+    </div>
+    <div class="divHHijo col-2"></div>
+  </div>
+  <app-login *ngIf="!generalService.validaSesion()" class="col-12"></app-login>
+  <div *ngIf="generalService.validaSesion()" class="col-12 m-t-2 h-50">
+    <div class="col-2 divHHijo">
+      <app-acciones></app-acciones>
+    </div>
+    <div class="col-8 divHHijo">
+      <router-outlet class="col-12 h-30"></router-outlet>
+    </div>
+    <div class="col-2 divHHijo">
+      <app-acciones2></app-acciones2>
+    </div>
+  </div>
+</div>

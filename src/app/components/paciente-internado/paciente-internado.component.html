@@ -1,0 +1,37 @@
+<div class="col-12 p-2">
+    <h3 style="text-align: center">Pacientes internados</h3>
+    <p-table 
+    [value]="generalService.listaInternados" 
+    classStyle="col-12 divHHijo"
+    [lazy]="true" 
+    [tableStyle]="{'min-width': '50rem'}" 
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [paginator]="true"
+    scrollHeight="400px">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Registro</th>
+                <th>Paciente</th>
+                <th>Doctor</th>
+                <th>Area</th>
+                <th>Estatus</th>
+                <th>Motivo ingreso</th>
+                <th>Fecha ingreso</th>
+                <th>Fecha salida</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-internado>
+            <tr>
+                <td class="txt-alig">{{ internado.idInternado }}</td>
+                <td class="txt-alig">{{ internado.nombrePac }}</td>
+                <td class="txt-alig">{{ internado.nombreDoc }}</td>
+                <td class="txt-alig">{{ generalService.getDescArea(internado.idArea) }}</td>
+                <td class="txt-alig">{{ generalService.getDesEstatusAtendido(internado.idEstatus) }}</td>
+                <td class="txt-alig">{{ internado.motivo }}</td>
+                <td class="txt-alig">{{ internado.fechaIngreso }}</td>
+                <td class="txt-alig">{{ internado.fechaSalida }}</td>
+                <!--<td class="txt-alig"><button style="col-12" type="button" class="signup-btn">Dar alta</button></td>-->
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

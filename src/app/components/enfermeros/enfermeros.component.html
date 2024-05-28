@@ -1,0 +1,43 @@
+<div class=" col-12 container centerBtnsDiv">
+    <h1 style="text-align: center">Enfermeros existentes</h1>
+    <p-table 
+    *ngIf="generalService.listaEnfermeros.length > 0"
+    [value]="generalService.listaEnfermeros" 
+    classStyle="col-12 divHHijo"
+    [scrollable]="true"
+    [lazy]="true" 
+    [showCurrentPageReport]="true"
+    [tableStyle]="{'min-width': '50rem'}" 
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [paginator]="true"
+    scrollHeight="400px">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Usuario</th>
+                <th>Nombre</th>
+                <th>Ap. Paterno</th>
+                <th>Ap. Materno</th>
+                <th>Sexo</th>
+                <th>Edad</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Dirección</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-enfermero>
+            <tr>
+                <td class="txt-alig">{{ enfermero.idUsuario }}</td>
+                <td class="txt-alig">{{ enfermero.nombre }}</td>
+                <td class="txt-alig">{{ enfermero.paterno }}</td>
+                <td class="txt-alig">{{ enfermero.materno }}</td>
+                <td class="txt-alig">{{ enfermero.sexo == 'H'? 'Hombre': 'Mujer' }}</td>
+                <td class="txt-alig">{{ enfermero.edad }}</td>
+                <td class="txt-alig">{{ enfermero.correo }}</td>
+                <td class="txt-alig">{{ enfermero.telefono }}</td>
+                <td class="txt-alig">{{ enfermero.direccion }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <label *ngIf="generalService.listaEnfermeros.length == 0">No se encontraron enfermeros existentes en el sistema!</label>
+</div>

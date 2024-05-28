@@ -1,0 +1,150 @@
+@import '~primeicons/primeicons.css';
+.col-1{
+    width: 8.3333%;
+}
+.col-2{
+    width: 16.6666%;
+}
+.col-3{
+    width: 25%;
+}
+.col-4{
+    width: 33.3333%;
+}
+.col-5{
+    width: 41.6666%;
+}
+.col-6{
+    width: 50%;
+}
+.col-7{
+    width: 58.3333%;
+}
+.col-8{
+    width: 66.6666%;
+}
+.col-9{
+    width: 75%;
+}
+.col-10{
+    width: 83.3333%;
+}
+.col-11{
+    width: 91.6666%;
+}
+.col-12{
+    width: 100%;
+}
+/*Estilos para calendario*/
+p-calendar{
+    background-color: green !important;
+    height: 0.5vw;
+    border-radius: 3%;
+}
+ 
+p-calendar 
+    .p-datepicker table td.p-datepicker-today>span,
+p-calendar .p-datepicker 
+    table td.p-datepicker-today>span:hover {
+    background-color: rgb(57, 122, 226);
+    color: white;
+    font-weight: bold;
+}
+/*************************/
+p-dropdown{
+    text-align: center !important;
+    vertical-align: top !important;
+}
+p-dropdown-panel p-dropdown-items p-dropdown-item {
+    text-align: center !important;
+    vertical-align: top !important;
+}
+
+p-table { 
+    word-break: normal;
+    overflow-wrap: anywhere;
+      }
+
+.divHMain{
+    background-color: brown;
+    width: 100% !important;
+    height: 100% !important;
+}
+.divHHijo{
+    display: inline-block;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+}
+.p-7{
+    padding: 7%;
+}
+.p-2{
+    padding: 2%;
+}
+.p-1{
+    padding: 1%;
+}
+.m-t-2{
+    margin-top: 2%;
+}
+.m-t-5{
+    margin-top: 5%;
+}
+.m-l-2{
+    margin-left: 2%;
+}
+.icons50{
+    width: 50% !important;
+    height: 50% !important;
+}
+.textLogin{
+    color: black;
+    justify-content: center;
+    text-justify: auto;
+}
+.div1Login{
+    background-color: rgb(31, 236, 168);
+    height: 100%;
+}
+.h-20{
+    height: 20vw;
+}
+.h-30{
+    height: 30vw;
+}
+.h-50{
+    height: 50vw;
+}
+.h-10{
+    height: 10vw;
+}
+.h-05v{
+    height: 0.5vw;
+}
+.div2Login{
+    background-image: url('~/assets/HOPITAL2.jpeg');
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    height: 60.4%;
+}
+.dispTable{
+    display:table-cell;
+}
+.dispFlex{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+.centerBtnsDiv{
+    text-align: center; 
+    justify-content: center;
+    align-items: center; 
+    display: grid;
+}
+.txt-alig{
+    text-align: center;
+}

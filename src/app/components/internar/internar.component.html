@@ -1,0 +1,101 @@
+<div class=" col-12 container centerBtnsDiv">
+	<form class="form">
+		<h3>Internar paciente</h3>
+		<hr />
+        <div class="col-12">
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="paciente"><b>Paciente</b></label>
+                <p-dropdown 
+                class="col-10"
+                [style]="{'height':'2vw', 'width': '83.3333%', 'text-align': 'center'}" 
+                [options]="generalService.listaPacientes" 
+                placeholder="Seleccione paciente"
+                [(ngModel)]="paciente.paciente" 
+                name="paciente"
+                optionLabel="nomCompleto" 
+                optionDisabled="inactive"
+                >
+                </p-dropdown>
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="area"><b>Área</b></label>
+                <p-dropdown 
+                class="col-10"
+                [style]="{'height':'2vw', 'width': '83.3333%', 'text-align': 'center'}" 
+                [options]="generalService.listaAreas" 
+                (onChange) = "setDocsArea()"
+                placeholder="Seleccione área"
+                [(ngModel)]="paciente.area" 
+                name="area"
+                optionLabel="descripcion" 
+                optionDisabled="inactive"
+                >
+                </p-dropdown>
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="atiende"><b>Doctor</b></label>
+                <p-dropdown 
+                class="col-10"
+                [style]="{'height':'2vw', 'width': '83.3333%', 'text-align': 'center'}" 
+                [options]="generalService.listaDoctoresArea" 
+                [(ngModel)]="paciente.atiende" 
+                placeholder="Seleccione doctor"
+                name="atiende"
+                optionLabel="nomCompleto" 
+                optionDisabled="inactive"
+                >
+                </p-dropdown>
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="motivo"><b>Motivo</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5"
+                    type="text"
+                    placeholder="Ingrese motivo"
+                    [(ngModel)]="paciente.motivo"
+                    name="motivo"
+                    required
+                  />
+            </div>
+        </div>
+        <div class="col-12">    
+            <div class="divHHijo col-3">
+                <label class="col-10 dispFlex m-t-5" for="status"><b>Estatus</b></label>
+                <p-dropdown 
+                class="col-10"
+                [style]="{'height':'2vw', 'width': '83.3333%', 'text-align': 'center'}" 
+                [options]="generalService.listaStsAtendido" 
+                [(ngModel)]="paciente.status" 
+                placeholder="Seleccione estatus"
+                name="status"
+                optionLabel="descripcion" 
+                optionDisabled="inactive"
+                >
+                </p-dropdown>
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="fechaIngreso"><b>Fecha Ingreso</b></label>
+                <p-calendar 
+                [showIcon]="true" 
+                [locale]="generalService.locale" 
+                [(ngModel)]="paciente.fechaIngreso" 
+                name="fechaIngreso"
+                dateFormat="dd/mm/yy" 
+                placeholer="dd/mm/aaaa" 
+                pattern="MM-dd-yyyy" 
+                [readonlyInput]="false"
+                >
+                </p-calendar>
+            </div>
+            <div class="divHHijo col-3"></div>
+            <div class="divHHijo col-3"></div>
+        </div>
+       
+		<br>
+		<div class="row">
+			<div class="col-lg">
+				<button type="button" (click)="ingresarInternado()" class="signup-btn">Registrar</button>
+			</div>
+		</div>
+	</form>
+</div>

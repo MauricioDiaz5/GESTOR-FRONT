@@ -1,0 +1,21 @@
+<div class="col-12 h-30">
+    <div class="col-6 divHHijo div1Login">
+        <h1>HOSPITAL TEC MISANTLA</h1>
+        <label class="textLogin">El único sistema integral de servicios de salud privada en México. 27 hospitales a nivel nacional con los mejores especialistas y tecnología de punta. Más de 30 años de experiencia en atención hospitalaria</label>
+        <div class="p-2">
+            <label class="dispTable">Usuario</label>
+            <input class="dispTable" [(ngModel)]="usuario.usuario" type="text" placeholder="Ingrese usuario"/>
+            <label class="dispTable m-t-2">Contraseña</label>
+            <input class="dispTable" type="password" [(ngModel)]="usuario.contrasena" placeholder="Ingrese contraseña"/>
+        </div>
+        <br>
+        <div class="col-12">
+            <div class="col-4 divHHijo"></div>
+			<div class="col-4 divHHijo">
+				<button type="button" (click)="ingresar()" class="signup-btn">Ingresar</button>
+			</div>
+            <div class="col-4 divHHijo"></div>
+		</div>
+    </div>
+    <div class="col-6 divHHijo div2Login"></div>
+</div>

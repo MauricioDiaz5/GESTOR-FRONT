@@ -1,0 +1,188 @@
+<div class=" col-12 container centerBtnsDiv">
+	<form class="form" autocomplete="off">
+		<h3>Registro de usuario</h3>
+		<hr />
+        <div class="col-12">
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="usuario"><b>Usuario</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5 p-1"
+                    type="text"
+                    [(ngModel)]="usuario.usuario"
+                    placeholder="Ingrese Usuario"
+                    maxlength="20"
+                    name="usuario"
+                    required
+                />
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5 p-1" for="idRol"><b>Rol/Pérfil</b></label>
+                <p-dropdown 
+                class="col-10"
+                [style]="{'height':'2vw', 'width': '83.3333%', 'text-align': 'center'}" 
+                [options]="generalService.listaRoles" 
+                placeholder="Seleccione rol/pérfil"
+                [(ngModel)]="usuario.idRol" 
+                name="idRol"
+                optionLabel="descripcion" 
+                optionDisabled="inactive"
+                >
+                </p-dropdown>
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="nombre"><b>Nombre</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5 p-1"
+                    type="text"
+                    [(ngModel)]="usuario.nombre"
+                    maxlength="50"
+                    placeholder="Ingrese nombre"
+                    name="nombre"
+                    required
+                />
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="appaterno"><b>Apellido Paterno</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5 p-1"
+                    type="text"
+                    [(ngModel)]="usuario.appaterno"
+                    maxlength="50"
+                    placeholder="Ingrese apellido paterno"
+                    name="appaterno"
+                    required
+                />
+            </div>
+        </div>
+        <div class="col-12">    
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="apmaterno"><b>Apellido materno</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5"
+                    type="text"
+                    maxlength="50"
+                    placeholder="Ingrese apellido materno"
+                    [(ngModel)]="usuario.apmaterno"
+                    name="apmaterno"
+                    required
+                  />
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="edad"><b>Edad</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5"
+                    type="number"
+                    maxlength="3"
+                    placeholder="Ingrese edad"
+                    [(ngModel)]="usuario.edad"
+                    name="edad"
+                    required
+                />
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="sexo"><b>Sexo</b></label>
+                <p-dropdown 
+                class="col-10"
+                [style]="{'height':'2vw', 'width': '83.3333%'}" 
+                placeholder="Seleccione sexo"
+                [options]="generalService.listaSexo" 
+                [(ngModel)]="usuario.sexo" 
+                name="sexo"
+                optionLabel="nombre" 
+                optionDisabled="inactive"
+                >
+                </p-dropdown>
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="direccion"><b>Dirección</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5"
+                    type="text"
+                    maxlength="100"
+                    placeholder="Ingrese dirección"
+                    [(ngModel)]="usuario.direccion"
+                    name="direccion"
+                    required
+                  />
+            </div>
+        </div>
+        <div class="col-12">    
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="correo"><b>Correo</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5 m-l-2"
+                    type="email"
+                    [(ngModel)]="usuario.correo"
+                    maxlength="100"
+                    placeholder="Ingrese correo"
+                    name="correo"
+                    required
+                    pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+                    />
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="telefono"><b>Telefono</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5"
+                    type="number"
+                    maxlength="10"
+                    placeholder="Ingrese telefono"
+                    [(ngModel)]="usuario.telefono"
+                    name="telefono"
+                    required
+                />
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="contrasena"><b>Contraseña</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5"
+                    type="password"
+                    maxlength="100"
+                    placeholder="Ingrese contraseña"
+                    [(ngModel)]="usuario.contrasena"
+                    name="contrasena"
+                    required
+                  />
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="activo"><b>Activo</b></label>
+                <p-dropdown 
+                class="col-10"
+                [style]="{'height':'2vw', 'width': '83.3333%'}" 
+                [options]="generalService.listaStatusUser" 
+                placeholder="Seleccione activo"
+                [(ngModel)]="usuario.activo" 
+                name="activo"
+                optionLabel="nombre" 
+                optionDisabled="inactive"
+                >
+                </p-dropdown>
+            </div>
+        </div>
+        <div class="col-12">    
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="idArea"><b>Area</b></label>
+                <p-dropdown 
+                class="col-10"
+                [style]="{'height':'2vw', 'width': '83.3333%'}" 
+                [options]="generalService.listaAreas" 
+                placeholder="Seleccione área"
+                [(ngModel)]="usuario.idArea" 
+                name="idArea"
+                optionLabel="descripcion" 
+                optionDisabled="inactive"
+                >
+                </p-dropdown>
+            </div>
+            <div class="divHHijo col-3"></div>
+            <div class="divHHijo col-3"></div>
+            <div class="divHHijo col-3"></div>
+        </div>
+		<br>
+		<div class="row">
+			<div class="col-lg">
+				<button type="button" (click)="registraUsuario()" class="signup-btn">Registrar</button>
+			</div>
+		</div>
+	</form>
+</div>

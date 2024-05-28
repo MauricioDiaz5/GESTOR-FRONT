@@ -1,0 +1,120 @@
+<div class=" col-12 container centerBtnsDiv">
+	<form class="form">
+		<h3>Registro de cita</h3>
+		<hr />
+        <div class="col-12">
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="paciente"><b>Paciente</b></label>
+                <p-dropdown 
+                class="col-10"
+                [style]="{'height':'2vw', 'width': '83.3333%', 'text-align': 'center'}" 
+                [options]="generalService.listaPacientes" 
+                placeholder = "Seleccione paciente"
+                [(ngModel)]="paciente.paciente" 
+                name="paciente"
+                optionLabel="nomCompleto" 
+                optionDisabled="inactive"
+                >
+                </p-dropdown>
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="area"><b>Área</b></label>
+                <p-dropdown 
+                class="col-10"
+                [style]="{'height':'2vw', 'width': '83.3333%', 'text-align': 'center'}" 
+                [options]="generalService.listaAreas"
+                placeholder = "Seleccione area"
+                (onChange) = "setDocsArea()"
+                [(ngModel)]="paciente.area" 
+                name="area"
+                optionLabel="descripcion" 
+                optionDisabled="inactive"
+                >
+                </p-dropdown>
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="atiende"><b>Doctor</b></label>
+                <p-dropdown 
+                class="col-10"
+                [style]="{'height':'2vw', 'width': '83.3333%', 'text-align': 'center'}" 
+                [options]="generalService.listaDoctoresArea" 
+                placeholder = "Seleccione doctor"
+                [(ngModel)]="paciente.atiende" 
+                name="atiende"
+                optionLabel="nomCompleto" 
+                optionDisabled="inactive"
+                >
+                </p-dropdown>
+            </div>
+            <div class="divHHijo col-3">
+                <label class="col-10 dispFlex m-t-5" for="signos"><b>Signos</b></label>
+                <input
+                    class="dispFlex m-t-5"
+                    type="text"
+                    placeholder="Introduzca signos"
+                    [(ngModel)]="paciente.signos"
+                    name="signos"
+                    required
+                />
+            </div>
+        </div>
+        <div class="col-12">    
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="motivo"><b>Motivo</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5"
+                    type="text"
+                    placeholder="Ingrese motivo"
+                    [(ngModel)]="paciente.motivo"
+                    name="motivo"
+                    required
+                  />
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="tratamientoActual"><b>Tratamiento actual</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5"
+                    type="text"
+                    placeholder="Ingrese tratamiento actual"
+                    [(ngModel)]="paciente.tratamientoActual"
+                    name="tratamientoActual"
+                    required
+                />
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="alergico"><b>Alergico</b></label>
+                <input
+                    class="col-10 dispFlex m-t-5"
+                    type="text"
+                    placeholder="Ingrese alergia (si existe)"
+                    [(ngModel)]="paciente.alergico"
+                    name="alergico"
+                    required
+                  />
+            </div>
+            <div class="divHHijo col-3">
+                <label class="dispFlex m-t-5" for="fechaCita"><b>Fecha Cita</b></label>
+                <p-calendar 
+                [showIcon]="true" 
+                [(ngModel)]="paciente.fechaCita"
+                name="paciente.fechaCita"
+                [locale]="generalService.locale" 
+                dateFormat="dd/mm/yy" 
+                placeholer="dd/mm/aaaa" 
+                pattern="MM-dd-yyyy" 
+                [readonlyInput]="false"
+                >
+                </p-calendar>
+            </div>
+            
+            <!--<div class="divHHijo col-3"></div>-->
+        </div>
+       
+		<br>
+		<div class="row">
+			<div class="col-lg">
+				<button type="button" (click)="registrarCita()" class="signup-btn">Registrar</button>
+			</div>
+		</div>
+	</form>
+</div>

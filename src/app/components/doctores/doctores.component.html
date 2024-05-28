@@ -1,0 +1,45 @@
+<div class=" col-12 container centerBtnsDiv">
+    <h3 style="text-align: center">Doctores existentes</h3>
+    <p-table 
+    *ngIf="generalService.listaDoctores.length > 0"
+    [value]="generalService.listaDoctores" 
+    classStyle="col-12 divHHijo"
+    [scrollable]="true"
+    [lazy]="true" 
+    [showCurrentPageReport]="true"
+    [tableStyle]="{'min-width': '50rem'}" 
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [paginator]="true"
+    scrollHeight="400px">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Usuario</th>
+                <th>Nombre</th>
+                <th>Ap. Paterno</th>
+                <th>Ap. Materno</th>
+                <th>Area</th>
+                <th>Sexo</th>
+                <th>Edad</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Dirección</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-doctor>
+            <tr>
+                <td class="txt-alig">{{ doctor.idUsuario }}</td>
+                <td class="txt-alig">{{ doctor.nombre }}</td>
+                <td class="txt-alig">{{ doctor.paterno }}</td>
+                <td class="txt-alig">{{ doctor.materno }}</td>
+                <td class="txt-alig">{{ generalService.getDescArea(doctor.idArea) }}</td>
+                <td class="txt-alig">{{ doctor.sexo == 'H'? 'Hombre': 'Mujer' }}</td>
+                <td class="txt-alig">{{ doctor.edad }}</td>
+                <td class="txt-alig">{{ doctor.correo }}</td>
+                <td class="txt-alig">{{ doctor.telefono }}</td>
+                <td class="txt-alig">{{ doctor.direccion }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <label *ngIf="generalService.listaDoctores.length == 0">No se encontraron doctores existentes en el sistema!</label>
+</div>
